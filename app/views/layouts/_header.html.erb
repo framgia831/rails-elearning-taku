@@ -3,18 +3,10 @@
         <div class="container">
             <%= link_to "E-Learning System", root_path, id: "logo" %>
 
-            <!-- Temporary Login Form -->
-            <form class="navbar-form navbar-right">
-                <div class="form-group">
-                    Email
-                    <input type="email" class="form-control" placeholder="Email">
-                </div>
-                <div class="form-group">
-                    Password
-                    <input type="password" class="form-control" placeholder="Password">
-                </div>
-                <button type="submit" class="btn btn-default">Log in</button>
-            </form>
+            <ul>
+                <li><%= render "layouts/login_form" %></li>
+                <li><%= link_to "Profile", @user %></li>
+            </ul>
         </div>
     </nav>    
 </header>
