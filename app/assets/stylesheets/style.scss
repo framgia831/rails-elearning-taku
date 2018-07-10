@@ -13,6 +13,7 @@ header {
     padding-top: 9px;
     font-weight: bold;
   }
+  
   .navbar-inverse {
     background-color: #4ba9ef;
     border-color: #4ba9ef;
@@ -49,8 +50,16 @@ footer small {
 }
 
 
-.col-center{
+.col-center {
   float: none;
   margin: auto;
+}
 
+
+#profile_pic {
+  text-align: center;
+}
+
+#update_pic {
+  text-align: center;
 }

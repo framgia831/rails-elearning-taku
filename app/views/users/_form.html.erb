@@ -22,7 +22,7 @@
         <%= f.password_field :password_confirmation, class: "form-control" %>
     </div>                      
 
-    <div>
-        <%= f.submit "Create Account", class: "btn btn-primary form-control" %>
-    </div>
+	<div>
+		<%= f.submit yield(:title), class: "btn btn-primary form-control" %>
+	</div>
 <% end %>
