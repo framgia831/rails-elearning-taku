@@ -5,8 +5,12 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li><%= render "layouts/login_form" %></li>
-                <li><%= link_to "Profile", @user %></li>
-                <li><%= link_to "Settings", "#" %></li>
+
+                <% if logged_in? %>
+                    <li><%= link_to "Profile", current_user %></li>
+                    <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                    <li><%= link_to "Logout", logout_path, method: :delete %></li>
+                <% end %>
             </ul>
         </div>
     </nav>    

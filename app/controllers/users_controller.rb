@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  before_action :require_login, only: [:edit, :update]
+
   def new
     @user = User.new
   end
@@ -6,6 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
       flash[:success] = "Welcome to E-Learning System!"
       redirect_to @user
     else
@@ -22,6 +26,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "Successfully updated!"
       redirect_to @user
