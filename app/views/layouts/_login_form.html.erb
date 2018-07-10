@@ -1,16 +1,15 @@
-<!-- This is a temporary Form. -->
+<div class="navbar-form navbar-right">
+    <%= form_for :session, url: login_path do |f| %>
+        <div class="form-group">
+            <%= f.label :email %>
+            <%= f.email_field :email %>
+        </div>
 
-<form class="navbar-form navbar-right">
-    <div class="form-group">
-        Email
-        <input type="email" class="form-control" placeholder="Email">
-    </div>
+        <div class="form-group">
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+        </div>
 
-    <div class="form-group">
-        Password
-        <input type="password" class="form-control" placeholder="Password">
-    </div>
-
-    <button type="submit" class="btn btn-primary">Log in</button>
-
-</form>
+        <button type="submit" class="btn btn-primary">Log in</button>
+    <% end %>
+</div>
