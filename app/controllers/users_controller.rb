@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
   
-  before_action :require_login, only: [:edit, :update]
+  before_action :require_login, only: [:edit, :update, :index]
+  before_action :correct_user, only: [:edit, :update]
 
   def new
     @user = User.new
+  end
+
+  def index
+    @users = User.paginate(page: params[:page], per_page: 15)
   end
 
   def create
