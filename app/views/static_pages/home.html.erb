@@ -1,7 +1,38 @@
-<h1 class="home-text text-center">Welcome to<br>E-Learning System</h1>
+<% if logged_in? %>
+    <%= provide(:title, "Dashboard") %>
+    <div class="row">
+        <div class="col-md-3">
+            <section class="user_info">
+                <%= render "shared/user_info" %>
+            </section>
+        
+            <section>
+                <%= render "shared/stats" %>
+            </section>
 
-<div class="button-wrapper">
-    <%= link_to "Create Account", signup_path, class: "btn btn-primary btn-lg" %>
-</div>
+            <div class="learned_words">
+                <%= link_to "Learned words", "#" %>
+            </div>
+        </div>
 
+        <div class="right-side col-md-3">
+            <div class="buttons">
+                <ul>
+                    <li>
+                        <%= link_to "Words", "#", class: "btn btn-primary btn-lg" %>
+                    </li>
+                    <li>
+                        <%= link_to "Lesson", "#", class: "btn btn-primary btn-lg" %>
+                    </li>
+                </ul>
+            </div>
+            <h2>Activities</h2>
+        </div>
+    </div>
+<% else %>
+    <h1 class="home-text text-center">Welcome to<br>E-Learning System</h1>
+    <div class="button-wrapper">
+        <%= link_to "Create Account", signup_path, class: "btn btn-primary btn-lg" %>
+    </div>
+<% end %>
 <!-- Add background picture and footer lists later. -->
