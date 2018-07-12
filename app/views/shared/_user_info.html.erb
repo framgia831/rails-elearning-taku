@@ -1,3 +1,4 @@
+<% @user ||= current_user %>
 
 <%= gravatar_for(@user, 120) %>
 <h3><%= @user.name %></h3>
