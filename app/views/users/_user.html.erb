@@ -1,4 +1,5 @@
 <li>
-	<%= gravatar_for(user, 50) %>
-	<%= link_to user.name, user %>
+    <%= gravatar_for(user, 50) %>
+    <%= link_to user.name, user %>
+    <%= render "follow_form", user: user %>
 </li>
