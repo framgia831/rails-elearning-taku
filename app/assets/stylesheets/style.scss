@@ -86,8 +86,32 @@ footer small {
   padding: 0;
 
   li {
+    width: 280px;
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
   }
-}
+
+  .btn-success {
+    color: #333333;
+    background-color: #d9edf7;
+    border-color: #337ab7;
+    padding: 2px;
+    margin-top: 5px;
+  }
+
+  .btn-default {
+    color: #fff;
+    background-color: #a94442;
+    border-color: #a94442;
+    padding: 2px;
+    margin-top: 5px;
+  }
+
+.new_relationship {
+  float: right;
+  }
+
+.edit_relationship {
+  float: right;
+  }
