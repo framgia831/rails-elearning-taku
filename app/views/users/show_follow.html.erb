@@ -6,7 +6,7 @@
         <section class="user_info">
             <%= render "shared/user_info" %>
         </section>
-        
+
         <section>
             <%= render "shared/stats" %>
         </section>
@@ -14,9 +14,18 @@
         <section class="learned_words">
             <%= link_to "Learned words", "#" %>
         </section>
+
+        <section>
+            <% @users.each do |user| %>
+                <%= link_to gravatar_for(user, 30), user %>
+            <% end %>
+        </section>
     </div>
 
-    <div class="col-md-3">
-        <h3>Activities</h3>
+    <div class="col-md-5">
+        <h3><%= @title %>(<%= @users.count %>)</h3>
+        <ul class="users">
+            <%= render @users %> 
+        </ul>
     </div>
 </div>
