@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
+  root 'static_pages#home'
+  
+  get '/signup', to: 'users#new'
 
   post '/login', to: 'session#create'
   delete '/logout', to: 'session#destroy'
-  get '/signup', to: 'users#new'
-  resources :users, except: :new
-  resources :relationships, only: [:create, :destroy]
- 
-  root 'static_pages#home'
 
+  resources :users, except: :new do
+    member do
+      get "following", "followers"
+    end
+  end
+  resources :relationships, only: [:create, :destroy]
 end
