@@ -12,6 +12,7 @@ User.create(
   name: "Taku",
   email: "taku@email.com",
   password: "password",
+  admin: true
   )
 
 50.times do

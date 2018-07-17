@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   get '/signup', to: 'users#new'
 
-  post '/login', to: 'session#create'
+  post '/login',    to: 'session#create'
   delete '/logout', to: 'session#destroy'
 
   resources :users, except: :new do
@@ -11,5 +11,13 @@ Rails.application.routes.draw do
       get "following", "followers"
     end
   end
+
+  namespace :admin do
+    resources :categories do
+      resources :words
+    end
+  end
+      
+
   resources :relationships, only: [:create, :destroy]
 end

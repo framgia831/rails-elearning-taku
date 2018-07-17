@@ -17,9 +17,10 @@ header {
   .navbar-inverse {
     background-color: #4ba9ef;
     border-color: #4ba9ef;
-  }
-  li {
-    display: inline-block;
+    
+    li {
+      display: inline-block;
+    }
   }
 }
 
@@ -80,7 +81,7 @@ footer small {
   text-align: center;
 }
 
-.users {
+.users, .categories{
   list-style: none;
   margin: 0;
   padding: 0;
@@ -139,16 +140,15 @@ footer small {
     display: block;
   }
 }
+
 .user_info {
   img {
     padding-left: 27px;
   }
-}
-
-#user_name {
-  font-size: 24px;
-  font-weight: 500;
-  padding-left: 63px;
+  #user_name {
+    font-size: 24px;
+    font-weight: 500;
+  }
 }
 
 .learned_words {
