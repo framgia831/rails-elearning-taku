@@ -1,6 +1,7 @@
 <ul class="word-list">
     <% @category.words.each do |word| %>
         <li><%= word.content %> / <%= link_to "Delete", [:admin, @category, word],
-                                                     method: :delete, data: {confirm: "Are you sure?"} %></li>
+                                                     method: :delete, data: {confirm: "Are you sure?"} %>
+		</li>
     <% end %>
 </ul>

@@ -16,7 +16,7 @@ class Admin::WordsController < ApplicationController
   end
 
   def destroy
-    @word = Word.find_by(params[:id])
+    @word = Word.find_by(id: params[:id])
     if @word.destroy
       flash[:success] = "Deleted!"
       redirect_to [:admin, @word.category]
