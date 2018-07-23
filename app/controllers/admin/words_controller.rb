@@ -2,6 +2,7 @@ class Admin::WordsController < ApplicationController
   def new
     @category = Category.find(params[:category_id])
     @word = Word.new
+    3.times { @word.word_answers.build }
   end
 
   def create
@@ -23,8 +24,27 @@ class Admin::WordsController < ApplicationController
     end
   end
 
+  def edit
+    @category = Category.find(params[:category_id])
+    @word = Word.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:category_id])
+    @word = Word.find(params[:id])
+    if @word.update_attributes(word_params)
+      flash[:success] = "Updated!"
+      redirect_to [:admin, @category]
+    else
+      render "edit"
+    end
+  end
+
   private
     def word_params
-      params.require(:word).permit(:content)
+      params.require(:word).permit(
+        :content,
+        word_answers_attributes: [:id, :content, :correct]
+      )
     end
 end
