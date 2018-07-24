@@ -30,3 +30,11 @@ following = users[3..40]
 
 followers.each { |follower| follower.follow(user) }
 following.each { |followed| user.follow(followed) }
+
+10.times do
+
+  Category.create(
+    title: Faker::Lorem.word,
+    description: Faker::Lorem.sentence(4)
+    )
+end

@@ -5,7 +5,7 @@ class SessionController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in(user)
       flash[:success] = "Logged in!"
-      redirect_to user
+      redirect_back_or(user)
     else
       flash[:danger] = "User doesn't exist."
       redirect_to root_url
