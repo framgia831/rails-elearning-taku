@@ -6,10 +6,10 @@ class Word < ApplicationRecord
   validates :content, presence: true
 
   def correct_answer
-  	word_answers.each do |answer|
-  		if answer.correct?
-  			return answer
-  		end
-  	end
+    word_answers.each do |answer|
+      if answer.correct?
+        return answer
+      end
+    end
   end
 end

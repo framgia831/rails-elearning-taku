@@ -2,10 +2,10 @@
 <ul class="word-list">
     <% @category.words.each do |word| %>
         <li>
-        	<%= link_to word.content, edit_admin_category_word_path(@category, word) %> /
-			<%= word.correct_answer.content %> /
-        	<%= link_to "Delete", [:admin, @category, word],
+            <%= link_to word.content, edit_admin_category_word_path(@category, word) %> /
+            <%= word.correct_answer.content %> /
+            <%= link_to "Delete", [:admin, @category, word],
                                      method: :delete, data: {confirm: "Are you sure?"} %>
-		</li>
+        </li>
     <% end %>
 </ul>

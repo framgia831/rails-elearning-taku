@@ -161,3 +161,13 @@ footer small {
     color: gray;
   }
 }
+
+.category-list {
+  section {
+    background: #eee;
+    margin-bottom: 20px;
+    .btn {
+      margin-bottom: 10px;
+    }
+  }
+}
