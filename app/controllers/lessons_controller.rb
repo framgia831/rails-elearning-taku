@@ -9,10 +9,11 @@ class LessonsController < ApplicationController
       lesson_word.save
     end
 
-    lesson_word = LessonWord.first
-    redirect_to [lesson, lesson_word]
+    redirect_to [lesson, lesson.lesson_words.first]
   end
 
   def show
+    @lesson = Lesson.find(params[:id])
+    @lesson_words = @lesson.lesson_words
   end
 end
