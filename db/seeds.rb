@@ -38,3 +38,24 @@ following.each { |followed| user.follow(followed) }
     description: Faker::Lorem.sentence(4)
     )
 end
+
+categories = Category.all
+
+categories.each do |category|
+  10.times do
+    content = Faker::Lorem.unique.word
+    word = category.words.build(content: content)
+
+    nth = rand(0..2)
+
+    3.times do |i|
+      if i == nth
+        word.word_answers.build(content: content, correct: true)
+      else
+        word.word_answers.build(content: Faker::Lorem.word)
+      end
+    end
+
+    word.save
+  end
+end

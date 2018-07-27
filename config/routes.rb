@@ -19,6 +19,9 @@ Rails.application.routes.draw do
     end
   end
       
+  resources :lessons, only: [:create, :show, :update] do
+    resources :lesson_words, only: [:create, :show, :update], path: 'words'
+  end
 
   resources :relationships, only: [:create, :destroy]
 end

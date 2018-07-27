@@ -8,7 +8,8 @@
                     <h2><%= category.title %></h2>
                     <p><%= category.description %></p>
                     <div class="btn-wrapper text-right">
-                        <%= button_to "LEARN", "#", class: "btn btn-success" %>
+                        <%= button_to "LEARN", category.lessons.build,
+                                               params: {category_id: category.id}, class: "btn btn-success" %>
                     </div>
                 </div>
             </section>
