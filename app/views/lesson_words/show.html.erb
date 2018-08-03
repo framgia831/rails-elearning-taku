@@ -1,0 +1,24 @@
+<%= provide(:title, @lesson.category.title) %>
+
+<div class="row">
+    <div class="col-md-6 col-center">
+        <div class="row">
+            <div class="col-md-3">
+                <h1><%= @lesson.category.title %></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-container">
+                <div class="col-md-3 col-center text-center">
+                    <h2><%= @lesson_word.word.content %></h2>
+                    <% @lesson_word.word.word_answers.each do |option| %>
+                        <ul>
+                            <li><%= button_to option.content, [@lesson, @lesson_word],
+                                                                        method: :patch, params:{answer_id: option.id} %></li>
+                        </ul>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
